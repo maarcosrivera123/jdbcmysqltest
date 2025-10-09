@@ -2,108 +2,111 @@ package model;
 
 public class User {
 
-	public String name = "marcos";
-	private int age;
-	private String sex;
-	private String password;
-	private String email;
-	private long id;
-	private String plaza;
+    public String name = "marcos";
+    private int age;
+    private String sex;
+    private String password;
+    private String email;
+    private long id;
+    private String plaza;
 
-//los atributos de 
-	public User(long id, String name) {
+    //los atributos de
+    public User(long id, String name) {
 
-	}
+    }
 
-	public User() {
-		// TODO Auto-generated constructor stub
-	
-	}
+    public User() {
+        // TODO Auto-generated constructor stub
 
-	public String getName() {
-		return name;
-	}
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public String getSex() {
-		return sex;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
+    public String getSex() {
+        return sex;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public long getId() {
-		return id;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public String getPlaza() {
-		return plaza;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setPlaza(String plaza) {
-		this.plaza = plaza;
-	}
-	public User (String name , int age, String sex, String password, String email, long id, String plaza) {
-	this.name = name;
-	this.age = age;
-	this.sex = sex;
-	this.password = password;
-	this.email = email;
-	this.id = id;
-	this.plaza = plaza;
-	
-	}
-	private boolean isVIP;
-	private String psw;
-	private float balance;
-	/**
-	 * @param name2
-	 * @param id2
-	 * @param psw
-	 * @param isVIP
-	 * @param balance
-	 */
-	public User(String name, int id, String psw, boolean isVIP, float balance) {
-		this.name = name;
-		this.psw = psw;
-		this.balance = balance;
-		this.id = id;
-		this.isVIP = isVIP;
-		
-	}
-	
+    public String getPlaza() {
+        return plaza;
+    }
+
+    public void setPlaza(String plaza) {
+        this.plaza = plaza;
+    }
+
+    public User(String name, int age, String sex, String password, String email, long id, String plaza) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.password = password;
+        this.email = email;
+        this.id = id;
+        this.plaza = plaza;
+
+    }
+
+    private boolean isVIP;
+    private String psw;
+    private float balance;
+
+    /**
+     * @param name
+     * @param id
+     * @param psw
+     * @param isVIP
+     * @param balance
+     */
+    public User(String name, int id, String psw, boolean isVIP, float balance) {
+        this.name = name;
+        this.psw = psw;
+        this.balance = balance;
+        this.id = id;
+        this.isVIP = isVIP;
+
+    }
+
 }
 	
  
