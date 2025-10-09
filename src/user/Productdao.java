@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test;
+package user;
 
 /**
  * @author marcos 25 sept 2025

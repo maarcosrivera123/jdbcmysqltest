@@ -85,6 +85,24 @@ public class User {
 	this.plaza = plaza;
 	
 	}
+	private boolean isVIP;
+	private String psw;
+	private float balance;
+	/**
+	 * @param name2
+	 * @param id2
+	 * @param psw
+	 * @param isVIP
+	 * @param balance
+	 */
+	public User(String name, int id, String psw, boolean isVIP, float balance) {
+		this.name = name;
+		this.psw = psw;
+		this.balance = balance;
+		this.id = id;
+		this.isVIP = isVIP;
+		
+	}
 	
 }
 	
