@@ -16,7 +16,6 @@ import model.User;
  *
  * @author marcos 25 sept 2025
  */
-<<<<<<< HEAD
 public class Userdao implements UserDaoInterface {
 	public void insert(int id, String name, boolean isVip) {
 		String insertSQL = "INSERT INTO users VALUES (?, '?', '?', ?, ?)";
@@ -26,18 +25,6 @@ public class Userdao implements UserDaoInterface {
 			ps.setInt(1, id);
 			ps.setString(2, name);
 			ps.setBoolean(3, isVip);
-=======
-public class Userdao {
-    public void insert(int id, String name, boolean isVip) {
-        String insertSQL = "INSERT INTO users VALUES (?, '?', '?', ?, ?)";
-        Connection connection = DBHelper.getConnection();
-        try {
-            PreparedStatement ps = connection.prepareStatement(insertSQL);
-            ps.setInt(1, id);
-            ps.setString(2, name);
-            ps.setBoolean(3, isVip);
->>>>>>> c3d9e82b1fa50d3d256ad167ae99a71da67d4de4
-
             // cierra la conexion con la base de datos
             connection.close();
         } catch (SQLException e) {
@@ -67,7 +54,6 @@ public class Userdao {
 
     }
 
-<<<<<<< HEAD
 	public ArrayList<User> Findall() {
 		String selectSQLS = "select * from users where username = 'Marcos'";
 		User[] Users;
@@ -85,43 +71,15 @@ public class Userdao {
 				boolean isVIP = resultSet.getBoolean("isVIP");
 				String psw = resultSet.getString("psw");
 				Float balance = resultSet.getFloat("balance");
-=======
-    public User[] Findall() {
-        String selectSQLS = "select * from users where username = 'Marcos'";
-        User[] Users;
-        ArrayList<User> userList = new ArrayList<User>();
-        Connection conn = DBHelper.getConnection();
-        try {
-            PreparedStatement ps = conn.prepareStatement(selectSQLS);
-
-            ResultSet resultSet = ps.executeQuery();
-            System.out.println("total rows is" + resultSet.last());
-            System.out.println("rows =" + resultSet.getFetchSize());
-            while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("username");
-                boolean isVIP = resultSet.getBoolean("isVIP");
-                String psw = resultSet.getString("psw");
-                Float balance = resultSet.getFloat("balance");
->>>>>>> c3d9e82b1fa50d3d256ad167ae99a71da67d4de4
 
                 System.out.println("record > id = " + id + " username = " + name + " isVIP = " + isVIP);
                 userList.add(new User(name, id, psw, isVIP, balance));
             }
-
-<<<<<<< HEAD
 			return userList;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-=======
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
->>>>>>> c3d9e82b1fa50d3d256ad167ae99a71da67d4de4
-
         return null;
     }
 
@@ -133,6 +91,24 @@ public class Userdao {
 	public int insetAll(User[] users) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public int insertAll(User[] users) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean transfer(long fromUserId, long toUserId, float amount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean transferWithBatch(long fromUserId, long toUserId, float amount) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
