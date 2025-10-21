@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
 import model.User;
 
 /**
@@ -17,7 +16,7 @@ import model.User;
  * 
  * @author marcos 25 sept 2025
  */
-public class Userdao {
+public class Userdao implements UserDaoInterface {
 	public void insert(int id, String name, boolean isVip) {
 		String insertSQL = "INSERT INTO users VALUES (?, '?', '?', ?, ?)";
 		Connection connection = DBHelper.getConnection();
@@ -56,7 +55,7 @@ public class Userdao {
 
 	}
 
-	public User[] Findall() {
+	public ArrayList<User> Findall() {
 		String selectSQLS = "select * from users where username = 'Marcos'";
 		User[] Users;
 		ArrayList<User> userList = new ArrayList<User>();
@@ -65,8 +64,8 @@ public class Userdao {
 			PreparedStatement ps = conn.prepareStatement(selectSQLS);
 
 			ResultSet resultSet = ps.executeQuery();
-			System.out.println("total rows is" + resultSet.last());
-			System.out.println("rows =" + resultSet.getFetchSize());
+			// System.out.println("total rows is" + resultSet.last());
+			// System.out.println("rows =" + resultSet.getFetchSize());
 			while (resultSet.next()) {
 				int id = resultSet.getInt("id");
 				String name = resultSet.getString("username");
@@ -78,12 +77,23 @@ public class Userdao {
 				userList.add(new User(name, id, psw, isVIP, balance));
 			}
 
+			return userList;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		return null;
+	}
+
+	public User find(int id) {
+		return null;
+
+	}
+
+	public int insetAll(User[] users) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

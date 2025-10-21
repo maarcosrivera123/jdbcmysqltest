@@ -3,6 +3,8 @@
  */
 package user;
 
+import java.util.ArrayList;
+
 import model.User;
 
 public class UserDaoTest {
@@ -16,6 +18,7 @@ public class UserDaoTest {
         // Eliminar un usuario con su id
         // userDao.delete(1);
 
-        User[] users = userDao.Findall();
+        ArrayList<User> users = userDao.Findall();
+        System.out.println("rows =");
     }
 }
